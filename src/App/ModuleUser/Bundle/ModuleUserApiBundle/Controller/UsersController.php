@@ -98,4 +98,4 @@ class UsersController
         
         return $this->viewHandler->handle($view);
     }
-}
+
