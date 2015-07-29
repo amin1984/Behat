@@ -1,0 +1,9 @@
+imports:
+    - { resource: security.yml }
+    - { resource: model/repositories.yml }
+    - { resource: model/models.yml }
+
+services:
+#    app_module_notebook_module_notebook.example:
+#        class: App\ModuleNotebook\Bundle\ModuleNotebookBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

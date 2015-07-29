@@ -1,0 +1,5 @@
+services:
+    app_common_layout.form.type.deleteConfirmation:
+        class: App\CommonLayoutBundle\Form\Type\DeleteConfirmationFormType
+        tags:
+            - { name: form.type, alias: commonDeleteConfirmation }

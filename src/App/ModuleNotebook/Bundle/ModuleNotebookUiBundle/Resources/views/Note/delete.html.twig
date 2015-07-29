@@ -1,0 +1,19 @@
+{% extends "AppCommonLayoutBundle:LayoutDefault:index.html.twig" %}
+
+{% block content %}
+
+{{ form_start(form, { attr: { novalidate: 'novalidate' } }) }}
+
+	<div class="alert alert-info" role="alert">
+		Do you want really remove note <strong>{{ item.subject }}</strong>?
+	</div>
+
+    <div class="row">
+      {{ form_widget(form.confirm, { label: 'Remove', attr: { class: 'btn btn-primary' } }) }}
+      {{ form_widget(form.cancel, { label: 'Cancel', attr: { class: 'btn btn-cancel' } }) }}
+    </div>
+    
+    {{ form_rest(form) }}
+{{ form_end(form) }}
+
+{% endblock %}

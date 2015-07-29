@@ -1,0 +1,39 @@
+default:
+    formatters:
+        pretty:
+            verbose:  true
+            paths:    false
+            snippets: false
+    
+    suites:
+        landingpage:
+            paths:    [ %paths.base%/features/landingpage ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\Context\WebContext
+                - App\ModuleUser\Bundle\ModuleUserBundle\Behat\Context\AuthenticationContext
+        authorization:
+            paths:    [ %paths.base%/features/authorization ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\Context\WebContext
+                - AppBundle\Behat\Context\DoctrineFixturesContext
+                - App\ModuleUser\Bundle\ModuleUserBundle\Behat\Context\AuthenticationContext
+        notebook:
+            paths:    [ %paths.base%/features/ModuleNotebookUi ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\Context\WebContext
+                - AppBundle\Behat\Context\DoctrineFixturesContext
+                - App\ModuleUser\Bundle\ModuleUserBundle\Behat\Context\AuthenticationContext
+    
+    extensions:
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
+                javascript:
+                    selenium2: ~
+            browser_name: firefox
+            show_auto:    false
+        Behat\Symfony2Extension: ~

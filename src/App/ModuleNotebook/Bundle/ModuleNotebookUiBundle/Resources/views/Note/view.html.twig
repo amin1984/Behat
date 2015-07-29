@@ -1,0 +1,56 @@
+{% extends "AppCommonLayoutBundle:LayoutDefault:index.html.twig" %}
+
+{% block content %}
+
+<table class="table">
+	<tr>
+		<td class="col-sm-3">
+			Subject:
+		</td>
+		<td class="col-sm-9">
+			{{ item.subject }}
+		</td>
+	</tr>
+	<tr>
+		<td class="col-sm-3">
+			Created at:
+		</td>
+		<td class="col-sm-9">
+			<time datetime="{{ item.creationDate | date('Y-m-d H:i:s') }}" class="fromnow">{{ item.creationDate | date('Y-m-d H:i:s') }}</time>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-sm-3">
+			Completed at:
+		</td>
+		<td class="col-sm-9">
+{% if item.completeDate is not null %}
+			<time datetime="{{ item.completeDate | date('Y-m-d H:i:s') }}" class="fromnow">{{ item.completeDate | date('Y-m-d H:i:s') }}</time>
+{% else %}
+			Not completed yet
+{% endif %}
+		</td>
+	</tr>
+	<tr>
+		<td class="col-sm-3">
+			Due time:
+		</td>
+		<td class="col-sm-9">
+{% if item.dueDate is not null %}
+			<time datetime="{{ item.dueDate | date('Y-m-d H:i:s') }}" class="fromnow">{{ item.dueDate | date('Y-m-d H:i:s') }}</time>
+{% else %}
+			No due time
+{% endif %}
+		</td>
+	</tr>
+	<tr>
+		<td class="col-sm-3">
+			Contents:
+		</td>
+		<td class="col-sm-9">
+			{{ item.contents }}
+		</td>
+	</tr>
+</table>
+
+{% endblock %}
