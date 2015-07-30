@@ -11,7 +11,7 @@ use FOS\RestBundle\View\View,
     FOS\RestBundle\View\RouteRedirectView,
     FOS\RestBundle\Controller\Annotations as Rest;
 use JMS\Serializer\SerializationContext;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class UsersController
 {
